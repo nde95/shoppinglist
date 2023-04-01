@@ -4,7 +4,21 @@ var ul = document.querySelector("ul")
 var input = document.getElementById("userinput")
 
 button.addEventListener("click", function() {
+	if (input.value.length > 0) {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
+	input.value = "";
+	}
+
+})
+
+input.addEventListener("keypress", function() {
+	if (input.value.length > 0 && event.which === 13) {
+	var li = document.createElement("li");
+	li.appendChild(document.createTextNode(input.value));
+	ul.appendChild(li);
+	input.value = "";
+	}
+
 })
