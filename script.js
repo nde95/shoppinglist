@@ -2,6 +2,9 @@ var button = document.getElementById("enter");
 var shoppingList = document.getElementById("shoppinglist");
 var ul = document.querySelector("ul")
 var input = document.getElementById("userinput")
+var container = document.getElementById("container")
+var listItems = document.querySelectorAll('li')
+
 
 function inputLength() {
 	return input.value.length;
@@ -26,7 +29,17 @@ function addListAfterKeypress (event) {
 	}
 }
 
+// DONE ELEMENT
+
+for (var i = 0; i < listItems.length; i++) {
+	// console.log(listItems[i]);
+	listItems[i].addEventListener("click", function () {
+		event.target.classList.toggle("finished")
+	})
+}
 
 button.addEventListener("click", addListAfterClick)
 
 input.addEventListener("keypress", addListAfterKeypress)
+
+// container.addEventListener("click", finished)
