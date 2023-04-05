@@ -1,1 +1,4 @@
 responsive shopping list app with remove buttons and strikethrough on click/tap
+
+
+TODO: stop all appended children from getting the finished class
